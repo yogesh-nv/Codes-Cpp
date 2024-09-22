@@ -7,30 +7,35 @@
 
 #include <iostream>
 using namespace std;
-int bubble_sort(int arr[], int n)
+void swap(int &a, int &b) // pass by reference
+{
+	int temp = a;
+	a = b;
+	b = temp;
+}
+void bubbleSort(int a[], int n)
 {
 	for (int i = 0; i < n - 1; i++)
 		for (int j = 0; j < n - i - 1; j++)
-		{
-			if (arr[j] > arr[j + 1])
+			if (a[j] > a[j + 1])
 			{
-				int temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+				swap(a[j], a[j + 1]);
 			}
-		}
-	cout << "\n after sorted\n";
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << "\t";
-	return 0;
 }
 int main()
 {
-	int arr[] = {5, 34, 24, 64, 42, 54, 400, 66, 7, 23, 6, 65};
-	int n = sizeof(arr) / sizeof(arr[0]);
-	cout << "before sorted \n";
+	int a[] = {8, 2, 1, 4, 5, 6, 7, 53, 6, 784, 45, 7};
+	int n = sizeof(a) / sizeof(a[0]);
+
 	for (int i = 0; i < n; i++)
-		cout << arr[i] << "\t";
-	bubble_sort(arr, n);
+	{
+		cout << " " << a[i];
+	}
+	cout << endl;
+	bubbleSort(a, n);
+	for (int i = 0; i < n; i++)
+	{
+		cout << " " << a[i];
+	}
 	return 0;
 }
