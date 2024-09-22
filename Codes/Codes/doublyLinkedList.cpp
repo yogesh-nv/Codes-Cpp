@@ -1,47 +1,26 @@
-// DoublyLinkedList.cpp
 #include<iostream>
+#include<cmath>
 using namespace std;
-class Node {
-public:
-    int data;
-    Node* prev;
-    Node* next;
-    
-    Node(int data)
-    {
-        this->data=data;
-        this->next=nullptr;
-        this->prev=nullptr;
-    }
-};
-void printForwardTraversal(Node *curr)
+
+int max(int a,int b)
 {
-    while(curr!=nullptr)
-    {
-        cout<<curr->data<<" ";
-        curr=curr->next;
-    }
+    return a>b?a:b;
 }
-void printBackwardTraversal(Node *curr)
+int maxSum(int a[],int n)
 {
-    while(curr!=nullptr)
+    int mx=a[0];
+    
+    for(int i=0;i<n;i++)
     {
-        cout<<curr->data<<" ";
-        curr=curr->prev;
+        mx=max(mx,a[i]);
     }
+    return mx;
 }
-int main(){
-    Node*  head=new Node(1);
-    Node* second=new Node(2);
-    Node* third=new Node(3);
-    
-    head->next=second;
-    second->prev=head;
-    second->next=third;
-    third->prev=second;
-    
-    cout<<"ForwardTraversal\n";
-    printForwardTraversal(head);
-    cout<<"BackwardTraversal\n";
-    printBackwardTraversal(third);
+int main()
+{
+    int a[]={4,3,6,8,9,1};
+    int n=sizeof(a)/sizeof(a[0]);
+    cout<<n;
+    cout<<maxSum(a,n);
+    return 0;
 }

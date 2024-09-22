@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		07F97C0C2C9E6E0A00564DAD /* doublyLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07F97C0B2C9E6E0A00564DAD /* doublyLinkedList.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		07D83F802C9D3CF500584FEB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -21,6 +25,7 @@
 /* Begin PBXFileReference section */
 		07D83F822C9D3CF500584FEB /* Codes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Codes; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D840012C9D4B4800584FEB /* BasicLinkedList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BasicLinkedList.cpp; path = Codes/BasicLinkedList.cpp; sourceTree = "<group>"; };
+		07F97C0B2C9E6E0A00564DAD /* doublyLinkedList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = doublyLinkedList.cpp; path = Codes/doublyLinkedList.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -45,6 +50,7 @@
 		07D83F792C9D3CF500584FEB = {
 			isa = PBXGroup;
 			children = (
+				07F97C0B2C9E6E0A00564DAD /* doublyLinkedList.cpp */,
 				07D840012C9D4B4800584FEB /* BasicLinkedList.cpp */,
 				07D83F842C9D3CF500584FEB /* Codes */,
 				07D83F832C9D3CF500584FEB /* Products */,
@@ -122,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F97C0C2C9E6E0A00564DAD /* doublyLinkedList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
