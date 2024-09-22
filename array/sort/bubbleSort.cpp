@@ -5,6 +5,8 @@
 // If the value is higher than the next one, swap the values so that the highest value comes last.
 // Go through the array as many times as there are values in the array.
 
+// ascending order "if (a[j] > a[j + 1])"
+// descending order "if (a[j] < a[j + 1])"
 #include <iostream>
 using namespace std;
 void swap(int &a, int &b) // pass by reference
