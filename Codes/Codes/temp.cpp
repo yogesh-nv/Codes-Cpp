@@ -6,14 +6,20 @@ void swap(int &a,int &b)
     a=b;
     b=temp;
 }
-void  bubbleSort(int a[],int n)
+void  selectionSort(int a[],int n)
 {
     for(int i=0;i<n-1;i++)
-        for(int j=0;j<n-i-1;j++)
-            if(a[j]>a[j+1])
-            {
-                swap(a[j],a[j+1]);
-            }
+    {
+        int minIndex=i;
+        for(int j=i+1;j<n;j++)
+        {
+            if(a[j]<a[minIndex])
+                minIndex=j;
+        }
+        
+        if(minIndex!=i)
+            swap(a[i],a[minIndex]);
+    }
 }
 int main()
 {
@@ -25,7 +31,7 @@ int main()
         cout<<" "<<a[i];
     }
     cout<<endl;
-    bubbleSort(a,n);
+    selectionSort(a,n);
     for(int i=0;i<n;i++)
     {
         cout<<" "<<a[i];
