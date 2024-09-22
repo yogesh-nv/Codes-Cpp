@@ -1,5 +1,5 @@
 // Bubble sort
-// Time complexity is o(n^2)
+// Time complexity is O(n^2)
 // Go through the array, one value at a time.
 // For each value, compare the value with the next value.
 // If the value is higher than the next one, swap the values so that the highest value comes last.
