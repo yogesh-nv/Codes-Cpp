@@ -1,6 +1,6 @@
 // 1. If a year is divisible by 400, it's a leap year.
 // 2. If a year is divisible by 4 but not by 100 then its leap year
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 int main()
 {

@@ -17,7 +17,7 @@ int main()
 {
 	double base = 1.5;
 	int expo = -2;
-	double res = 1.0;
+//	double res = 1.0;
 
 	cout << "Result = " << power(base, expo);
 
