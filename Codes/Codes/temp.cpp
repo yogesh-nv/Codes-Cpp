@@ -6,7 +6,7 @@ void swap(int &a,int &b)
     a=b;
     b=temp;
 }
-void  selectionSort(int a[],int n)
+void  mergeSort(int a[],int n)
 {
     for(int i=0;i<n-1;i++)
     {
@@ -31,7 +31,7 @@ int main()
         cout<<" "<<a[i];
     }
     cout<<endl;
-    selectionSort(a,n);
+    mergeSort(a,n);
     for(int i=0;i<n;i++)
     {
         cout<<" "<<a[i];
