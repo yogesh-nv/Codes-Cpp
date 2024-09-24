@@ -1,70 +1,48 @@
 #include<iostream>
 using namespace std;
-void merge(int arr[],int left,int mid,int right)
+int firstOccurance(int* arr,int left,int right,int x)
 {
-    int n1=mid-left+1;
-    int n2=right-mid;
-    int L[n1],R[n2];
-    int i=0,j=0,k=left;
-    
-    for(i=0;i<n1;i++)
-        L[i]=arr[left+i];
-    
-    for(j=0;j<n2;j++)
-        R[j]=arr[mid+1+j];
-    i=0;j=0;
-    while(i<n1 && j<n2)
-    {
-        if(L[i]<=R[j])
-        {
-            arr[k]=L[i];
-            i++;
-        }
-        else
-        {
-            arr[k]=R[j];
-            j++;
-        }
-        k++;
-    }
-    while(i<n1)
-    {
-        arr[k]=L[i];
-        i++;
-        k++;
-    }
-    while(j<n2)
-    {
-        arr[k]=R[j];
-        j++;
-        k++;
-    }
-}
-
-void  mergeSort(int arr[],int left,int right)
-{
-    if(left<right)
+    if(left<=right)
     {
         int mid=left+(right-left)/2;
-        mergeSort(arr,left,mid);
-        mergeSort(arr,mid+1,right);
-        merge(arr,left,mid,right);
+        if(mid==0 || x>arr[mid-1] && x==arr[mid])
+            return mid;
+        else if(x>arr[mid])
+            return firstOccurance(arr,  mid+1,right, x);
+        else
+            return firstOccurance(arr, left, mid-1, x);
     }
+    return -1;
+}
+int lastOccurance(int arr[],int n,int left,int right,int x)
+{
+    if(left<=right)
+    {
+        int mid=left+(right-left)/2;
+        if(mid==n-1 || x<arr[mid+1] && x==arr[mid])
+            return mid;
+        else if(x<arr[mid])
+            return lastOccurance(arr, n, left, mid-1, x);
+        else
+            return lastOccurance(arr, n, mid+1, right, x);
+    }
+    return -1;
+}
+int occurance(int arr[],int n,int x)
+{
+    int firstIndex=firstOccurance(arr,0,n-1,x);
+    if(firstIndex==-1)
+        return -1;
+    int lastIndex=lastOccurance(arr,n,firstIndex,n-1,x);
+    return lastIndex-firstIndex+1;
 }
 int main()
 {
-    int arr[]={8,2,1,4,5,6,7};
+    int arr[]={1,1,2,2,2,2,3,3};
     int n=sizeof(arr)/sizeof(arr[0]);
-    
-    for(int i=0;i<n;i++)
-    {
-        cout<<" "<<arr[i];
-    }
-    cout<<endl;
-    mergeSort(arr,0,n-1);
-    for(int i=0;i<n;i++)
-    {
-        cout<<" "<<arr[i];
-    }
+    cout<<"Enter the element to find its frequency\n";
+    int x;
+    cin>>x;
+    cout<<"occurance of "<<x<<" = "<<occurance(arr,n,x)<<endl;
     return 0;
 }
