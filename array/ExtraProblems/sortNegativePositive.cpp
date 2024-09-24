@@ -1,4 +1,5 @@
 //https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/
+//Sort negative number in left positive number in right
 #include <iostream>
 using namespace std;
 void swap(int &a,int &b)
