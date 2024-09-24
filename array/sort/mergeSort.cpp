@@ -1,3 +1,4 @@
+// https://youtu.be/SHqvb69Qy70?si=QXNSkps5XhNff1LQ
 #include <iostream>
 using namespace std;
 void merge(int arr[], int left, int mid, int right) // conquer part
