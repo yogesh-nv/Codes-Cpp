@@ -1,29 +1,23 @@
 #include<iostream>
 using namespace std;
-void primeFactor(int num)
+int gcd(int m,int n)
 {
-    while(num%2==0)
+    if(m==n)
+        return m;
+    while(m!=1 || n!=1)
     {
-        cout<<"2 ";
-        num/=2;
+        if(m>n)
+            m-=n;
+        else if(m<n)
+            n-=m;
     }
-    for(int i=3;i*i<=num;i+=2)
-    {
-        while(num%i==0)
-        {
-            cout<<i<<" ";
-            num/=i;
-        }
-    }
-    if(num>2)
-        cout<<num;
+    return m;
 }
 int main()
 {
-    cout<<"Enter the number\n";
-    int num;
-    cin>>num;
-    cout<<endl;
-    primeFactor(num);
+    cout<<"Enter the numbers\n";
+    int m,n;
+    cin>>m>>n;
+    cout<<gcd(m,n);
     return 0;
 }
