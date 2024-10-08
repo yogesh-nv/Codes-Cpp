@@ -1,23 +1,27 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int gcd(int m,int n)
+void insertionSort(int arr[], int n)
 {
-    if(m==n)
-        return m;
-    while(m!=1 || n!=1)
+    for (int i = 1; i < n; i++)
     {
-        if(m>n)
-            m-=n;
-        else if(m<n)
-            n-=m;
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
     }
-    return m;
 }
 int main()
 {
-    cout<<"Enter the numbers\n";
-    int m,n;
-    cin>>m>>n;
-    cout<<gcd(m,n);
-    return 0;
+    int arr[] = {54, 23, 59, 65, 12, 14, 8, 21, 54,5, 12, 85, 65};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    insertionSort(arr, n);
+    cout << endl;
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
 }

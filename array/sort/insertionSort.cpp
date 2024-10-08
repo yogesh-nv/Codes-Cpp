@@ -1,32 +1,27 @@
-// insertion sort
 #include <iostream>
 using namespace std;
-int insertion_Sort(int arr[], int n)
+void insertionSort(int arr[], int n)
 {
-	int temp = 0, j;
 	for (int i = 1; i < n; i++)
 	{
-		temp = arr[i];
-		j = i - 1;
-		while (j >= 0 && arr[j] > temp)
+		int key = arr[i];
+		int j = i - 1;
+		while (j >= 0 && arr[j] > key)
 		{
 			arr[j + 1] = arr[j];
 			j--;
 		}
-		arr[j + 1] = temp;
+		arr[j + 1] = key;
 	}
-	cout << "\n after sorted\n";
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << "\t";
-	return 0;
 }
 int main()
 {
-	int arr[] = {5, 34, 24, 64, 42, 54, 400, 66, 7, 23, 6, 65};
+	int arr[] = {54, 23, 59, 65, 12, 14, 8, 21, 545, 12, 85, 65};
 	int n = sizeof(arr) / sizeof(arr[0]);
-	cout << "before sorted \n";
 	for (int i = 0; i < n; i++)
-		cout << arr[i] << "\t";
-	insertion_Sort(arr, n);
-	return 0;
+		cout << arr[i] << " ";
+	insertionSort(arr, n);
+	cout << endl;
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << " ";
 }
